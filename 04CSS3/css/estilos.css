@@ -170,3 +170,22 @@ http://www.colorzilla.com/gradient-editor/
      border: medium dashed #EC673A;
      padding: 1em;
  }
+ #fondo-origen
+ {
+     background: #292623 url("../img/html5-3d.jpg") no-repeat;
+     border: medium dashed #EC673A;
+     background-clip: content-box;
+     background-origin: padding-box;
+     background-origin: border-box;
+     background-origin: content-box;
+     padding: 1em;
+ }
+ #fondo-tamanio
+ {
+     background: #292623 url("../img/html5-3d.jpg") no-repeat bottom center;
+     background-size: 192px 108px;
+     background-size: 50% 25%;
+     background-size: 50% 50%;
+     background-size: contain;
+     background-size: cover;
+ }
