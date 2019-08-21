@@ -115,15 +115,14 @@ https://developer.mozilla.org/es/docs/CSS/Using_CSS_gradients
 http://www.colorzilla.com/gradient-editor/
  */
 
- #ajuste-texto
- {
-     background: #333333;
-     margin:auto;
-     width: 100px;
-     word-wrap:break-word;
- }
- #texto-columnas
- {
+#ajuste-texto {
+    background: #333333;
+    margin: auto;
+    width: 100px;
+    word-wrap: break-word;
+}
+
+#texto-columnas {
     -ms-column-count: 3;
     -ms-column-gap: 1em;
     -ms-column-rule: thin solid black;
@@ -136,56 +135,180 @@ http://www.colorzilla.com/gradient-editor/
     column-count: 3;
     column-gap: 1em;
     column-rule: thin solid black;
- }
+}
 
- .tamanio-caja
- {
-     background: #999;
-     margin:.5em auto;
-     padding: 1em;
-     width: 50%;
- }
- .a-dieta
- {
-     box-sizing: border-box
- }
+.tamanio-caja {
+    background: #999;
+    margin: .5em auto;
+    padding: 1em;
+    width: 50%;
+}
 
- /* https://uniwebsidad.com/libros/css/capitulo-4/fondos */
- #fondos-multiples
- {
-     background:url("../img/arbol.png") no-repeat center bottom,
-                url("../img/aves.png") no-repeat center bottom,
-                url("../img/cielo.png") no-repeat center top;
+.a-dieta {
+    box-sizing: border-box
+}
+
+/* https://uniwebsidad.com/libros/css/capitulo-4/fondos */
+#fondos-multiples {
+    background: url("../img/arbol.png") no-repeat center bottom,
+        url("../img/aves.png") no-repeat center bottom,
+        url("../img/cielo.png") no-repeat center top;
     background-color: skyblue;
-     color:#292623;
-     height: 700px;
-     width: 100%;
- }
- #fondo-area
- {
-     background: #292623;
-     background-clip: border-box;
-     background-clip: padding-box;
-     background-clip: content-box;
-     border: medium dashed #EC673A;
-     padding: 1em;
- }
- #fondo-origen
- {
-     background: #292623 url("../img/html5-3d.jpg") no-repeat;
-     border: medium dashed #EC673A;
-     background-clip: content-box;
-     background-origin: padding-box;
-     background-origin: border-box;
-     background-origin: content-box;
-     padding: 1em;
- }
- #fondo-tamanio
- {
-     background: #292623 url("../img/html5-3d.jpg") no-repeat bottom center;
-     background-size: 192px 108px;
-     background-size: 50% 25%;
-     background-size: 50% 50%;
-     background-size: contain;
-     background-size: cover;
- }
+    color: #292623;
+    height: 700px;
+    width: 100%;
+}
+
+#fondo-area {
+    background: #292623;
+    background-clip: border-box;
+    background-clip: padding-box;
+    background-clip: content-box;
+    border: medium dashed #EC673A;
+    padding: 1em;
+}
+
+#fondo-origen {
+    background: #292623 url("../img/html5-3d.jpg") no-repeat;
+    border: medium dashed #EC673A;
+    background-clip: content-box;
+    background-origin: padding-box;
+    background-origin: border-box;
+    background-origin: content-box;
+    padding: 1em;
+}
+
+#fondo-tamanio {
+    background: #292623 url("../img/html5-3d.jpg") no-repeat bottom center;
+    background-size: 192px 108px;
+    background-size: 50% 25%;
+    background-size: 50% 50%;
+    background-size: contain;
+    background-size: cover;
+}
+
+#transformaciones p {
+    background: #999;
+    display: inline-block;
+    vertical-align: top;
+    width: 15%;
+}
+
+#t-traslacion {
+    -webkit-transform: translate(40px, 10px);
+    transform: translate(40px, 10px);
+}
+
+#t-rotacion {
+    transform: rotate(40deg);
+}
+
+#t-escala {
+    transform: scale(.5, 2);
+}
+
+#t-sesgar {
+    transform: skew(20deg, 0deg);
+}
+
+#t-todas {
+    transform: rotate(-260deg) scale(.5, .5) skew(30deg, 20deg) translate(-50px, 30px);
+}
+
+#transiciones {
+    background: skyblue;
+    margin-top: 3em;
+    /* transition: background 2.5s ease-out,
+                color 1s ease-in;
+    transition: all 2s ease-out;*/
+}
+
+#transiciones:hover {
+    background: #999;
+    border-radius: .5em;
+    color: #000;
+    font-size: 2em;
+    transform: rotate(360deg);
+}
+
+.cambio {
+    -webkit-transition: all 2s ease-out;
+    transition: all 2s ease-out;
+}
+
+#tx-rotacion:hover {
+    -ms-transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+    transform: rotateX(360deg);
+}
+
+#ty-rotacion:hover {
+    -ms-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}
+
+#tz-rotacion:hover {
+    -ms-transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+}
+
+#animaciones
+{
+    background: #000;
+}
+#pacman{
+    border:1.5em solid yellow;
+    border-right: 1.5em solid transparent;
+    border-radius: 1.5em; 
+    height: 0;
+    /* https://uniwebsidad.com/libros/css/capitulo-5 */
+    position: relative; /* static, relative, absolute, fixed */
+    width: 0;
+}
+#ojo{
+    background: #000;
+    border-radius:.5em;
+    height: .5em;
+    left:-.25em;
+    top:-1.25em;
+    position:relative;
+    width: .5em;
+}
+.animado
+{
+    /*
+    Animacion: nombre duracion veces tipoAnim retardo aceleracion;
+    Tipo animacion: normal alternate
+    tipos de aceleracion: linear,ease,ease-in,ease-out,ease-in-out
+    https://developer.mozilla.org/es/docs/Web/CSS/CSS_Animations/Usando_animaciones_CSS
+    https://daneden.github.io/animate.css/
+    http://justinaguilar.com/animations/index.html
+    */
+    animation: muevete 4s infinite normal 2s ease-out;
+}
+@keyframes muevete
+{
+    0%,100%
+    {
+        left:0;
+    }
+    45%
+    {
+        left:90%;
+        border-color:red;
+        border-right-color: transparent;
+        transform: rotateY(0deg);
+    }
+    55%
+    {
+        left:90%;
+        transform: rotateY(-180deg);
+    }
+    90%
+    {
+        left:0;
+        transform: rotateY(-180deg);
+    }
+}
