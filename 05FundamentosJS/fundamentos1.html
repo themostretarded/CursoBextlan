@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fundamentos de Programacion en JavaScript parte 1</title>
+    <meta name="Description" content="En este ejercicio entenderemos fundamentos de Programacion en javascript" />
+    <style>
+        body,html
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fundamentos de Programacion en javascript parte 1</h1>
+    <p>
+        <a href="index.html">Regresar al inicio</a>
+    </p>
+    <h2>Definir un perro</h2>
+    <script>
+        //comentario de una linea
+        /*
+        Comentario
+        de
+        varias
+        lineas*/
+
+        function Perro(n,r,e,s,a,f,c)
+        {
+            //THIS dentro de una funcion es el objeto que se define en la funcion
+            let o =this;
+            let imagen = document.createElement("img");
+
+            o.nombre = n;
+            o.raza = r;
+            o.edad = e;
+            o.sexo = s;
+            o.adiestrado = a;
+            o.foto = f;
+
+            //Asignacion (1 igual = )
+
+            //Comparacion (2 iguales == compara que los valores sean iguales)
+            //o.sexo = (s==true)?"Macho" : "Hembra";
+
+            //Identico (3 iguales === compara que los valores y su tipo de dato sean identicos)
+            //o.sexo = (s===true)?"Macho" : "Hembra";
+
+            //operador ternario
+            // variable = (condicion)? verdadero:falso
+            o.sexo = (s)?"Macho" : "Hembra";
+
+            //console.log(typeof s,typeof n,typeof e);
+
+            o.aparecer = function()
+            {
+                //alert("El objeto aparece")
+                //imagen = document.createElement("img");
+                imagen.src=o.foto;
+                imagen.alt=o.nombre;
+                imagen.title=o.nombre;
+
+                document.body.appendChild(imagen);
+            }
+            o.ladrar = function()
+            {
+                //alert("Guau!!! Guau!!!");
+                let audio = document.createElement("audio");
+                audio.src="activos/guau.mp3";
+
+                //audio.controls = true;
+                //document.body.appendChild(audio);
+                return audio.play();
+            }
+            o.comer = function(c)
+            {
+                
+                o.comida = c;
+                var alerta= alert(o.nombre+" comio "+o.comida);
+                return alerta;
+            }
+            o.mover = function()
+            {
+                //alert("se movio");
+                imagen.style.position = "relative";
+                imagen.style.left ="10em";
+                imagen.style.borderRadius ="100%"
+            }
+        }
+        function iniciar()
+        {
+            //alert("Ejecutando funcion iniciar");
+            let kenai = new Perro("kEnAi","FireFox",2,true,true,"activos/kenai.jpg");
+            //alert(kenai);
+            document.write(kenai+"<br />"+window+"<br />"+document+"<br />"+navigator);
+            //console.log(kenai,window,navigator,document);
+            document.write("<p>"+kenai.nombre+"</p>");
+            document.write("<p>"+kenai.raza+"</p>");
+            document.write("<p>"+kenai.edad+"</p>");
+            document.write("<p>"+kenai.sexo+"</p>");
+            document.write("<p>"+kenai.adiestrado+"</p>");
+            kenai.aparecer();
+            kenai.ladrar();
+            kenai.comer("tacos");
+            kenai.mover();
+        }
+
+        iniciar();
+        
+    </script>
+</body>
+</html>
